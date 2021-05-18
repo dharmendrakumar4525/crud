@@ -8,6 +8,7 @@
         <th scope="col">Restaurant Desc</th>
         <th scope="col">Email</th>
         <th scope="col">Phone Mobile</th>
+        <th scope="col">image</th>
         <th scope="col">action</th>
     </tr>
     </thead>
@@ -20,8 +21,18 @@
         <td>{{$restaurant['restaurant_desc']}}</td>
         <td>{{$restaurant['email']}}</td>
         <td>{{$restaurant['phone_number']}}</td>
-        <td> <a herf="{{route('admin.restaurant.edit',$restaurant['id'])}}"> <button>edit</button></a></td>
+{{--        <td>{{$restaurant['restaurantimage']}}</td>--}}
+     <td> <img src={{url('storage/app/public/uploads/'.$restaurant['restaurantimage']['filename'])}}></td>
 
+
+
+        <td>{{$restaurant['phone_number']}}</td>
+        <td>
+        <button type="button" onclick="window.location='{{route('admin.restaurant.edit',$restaurant['id'])}}'">Button</button>
+            <button type="button" class="deleteProduct" data-id="{{ $restaurant['id']}}" data-token="{{ csrf_token() }}" >Delete</button>
+        </td>
+
+        <td></td>
     </tr>
     @endforeach
     </tbody>

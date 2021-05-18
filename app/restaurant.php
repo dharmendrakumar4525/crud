@@ -15,4 +15,8 @@ class restaurant extends Model
         'email',
         'user_id'
     ];
+    public function restaurantimage()
+    {
+        return $this->hasone(RestaurantImage::class);
+    }
 }

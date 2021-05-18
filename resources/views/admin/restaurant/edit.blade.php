@@ -60,11 +60,6 @@
                             <div class="form-group">
                                 <label for="image" class="form-label">Image</label>
                                 <input type="file" id="image"  name= "image" class="form-control">
-                                @if($errors->has('image'))
-                                    <p class="help-block">
-                                        {{ $errors->first('image') }}
-                                    </p>
-                                @endif
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary form-control">Submit</button>

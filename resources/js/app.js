@@ -31,3 +31,27 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app'
 });
+
+$(".deleteProduct").click(function(){
+    console.log("sdsd");
+    var id = $(this).data("id");
+    var token = $(this).data("token");
+    $.ajax(
+        {
+            url: "admin/restaurant/delete/"+id,
+            type: 'PUT',
+            dataType: "JSON",
+            data: {
+                "id": id,
+                "_method": 'DELETE',
+                "_token": token,
+            },
+            success: function ()
+            {
+                console.log("it Work");
+            }
+        });
+
+    console.log("It failed");
+});
+

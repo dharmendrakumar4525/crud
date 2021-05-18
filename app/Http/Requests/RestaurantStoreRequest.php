@@ -31,7 +31,7 @@ class RestaurantStoreRequest extends FormRequest
             'PhoneNumber' => 'required|max:255',
             'Code' => 'required|max:255',
             'Email' => 'required|max:255|email',
-
+            'image'=> 'required|image'
         ];
 
     }
